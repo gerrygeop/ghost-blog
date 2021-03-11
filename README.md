@@ -1,13 +1,17 @@
-# Kerangka PHP MVC
+# Ghost Blog
 
-### Config
+### Blog ini bisa apa aja?
 
-Pada folder config define BASEURL menggunakan pretty url. Mahasiswa Sebagai file example untuk model, controller dan view
+- Buat postingan
+- Upload foto pada postingan
+- Like postingan
+- Comment postingan
+- Categori postingan
 
 ---
 
-### CSS dan JS
+### Asset CSS & JS
 
-CSS dan JS pada public kosong
-<br>
-Sekarang menggunakan cdn dari bootstrap
+Tailwind CSS & Alpine JS
+
+##### Menanti perkembangan lebih lanjut
