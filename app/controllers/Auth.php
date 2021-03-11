@@ -196,7 +196,7 @@ class Auth extends Controller {
     {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
-        header('Location: '. BASEURL .'/auth/login');
+        header('Location: '. BASEURL .'/home');
     }
 
 
