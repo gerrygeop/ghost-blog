@@ -126,8 +126,8 @@ class Auth extends Controller {
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
                 //Kirim data ke model user
-                if ( $this->model('UserModel')->store($data) > 0) {
-                    header('Location: '. BASEURL .'/auth');
+                if ( $this->model('UserModel')->insert($data) > 0) {
+                    header('Location: '. BASEURL .'/auth/login');
                 } else {
                     die('Terjadi kesalah bung');
                 }
@@ -143,17 +143,67 @@ class Auth extends Controller {
     // Proses login user
     public function login()
     {
-        $data['judul'] = 'Login';
+        $data = [
+            'username' => '',
+            'password' => '',
+            'usernameError' => '',
+            'passwordError' => ''
+        ];
 
+        // Cek method post
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+            $data = [
+                'username' => trim($_POST['username']),
+                'password' => trim($_POST['password']),
+                'usernameError' => '',
+                'passwordError' => '',
+            ];
+
+            // Validasi Username
+            if ( empty($data['username']) ) {
+                $data['usernameError'] = 'Username lo ape cuk!';
+            }
+
+            // Validasi Password
+            if ( empty($data['password']) ) {
+                $data['passwordError'] = 'Password nye ape tong!?';
+            }
+
+            // Cek kalo error nya dah bersih
+            if ( empty($data['usernameError']) && empty($data['passwordError']) ) {
+                $loginUser = $this->model('UserModel')->loginUser($data['username'], $data['password']);
+
+                if ($loginUser) {
+                    $this->createUserSession($loginUser);
+                } else {
+                    // die('Gagal Login');
+                    $data['passwordError'] = 'Username / Password nye kagak bener.';
+                }
+            }
+        }
+
+        $data['judul'] = 'Login';
         $this->view('templates/header', $data);
-        $this->view('auth/login');
+        $this->view('auth/login', $data);
         $this->view('templates/footer');
     }
 
 
-    // Proses registrasi user
-    public function store()
+    // Session
+    public function createUserSession($user)
     {
-        // coming soon
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+        header('Location: '. BASEURL .'/auth/login');
+    }
+
+
+    public function logout()
+    {
+        unset($_SESSION['user_id']);
+        unset($_SESSION['username']);
+        header('Location: '. BASEURL .'/auth/login');
     }
 }

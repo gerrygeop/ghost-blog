@@ -14,12 +14,13 @@
     <!-- Font Style -->
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-font.css">
 
-    <title>Ghost - <?= $data['judul'] ?> </title>
+    <title>Ghost | <?= $data['judul'] ?> </title>
 </head>
 <body class="bg-gray-200 font-karla">
 
     <nav class="bg-white shadow mb-10">
         <div x-data="{ isOpen: false }" class="max-w-3xl mx-auto py-3 px-6 md:px-0 md:flex md:justify-between md:items-center">
+
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
 
@@ -49,6 +50,7 @@
                         </svg>
                     </button>
                 </div>
+
             </div>
 
             <!-- Menu if mobile set to hidden -->
@@ -58,9 +60,17 @@
                     <a 
                         href="<?=BASEURL;?>/blog"
                         class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:ml-8 md:my-0">Blog</a>
-                    <a 
-                        href="<?=BASEURL;?>/auth/login"
-                        class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:ml-8 md:my-0">Login</a>
+
+                    <?php if ( isset($_SESSION['user_id']) ) : ?>
+                        <a href="<?=BASEURL;?>/auth/logout" class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:ml-8 md:my-0">
+                            Logout
+                        </a>
+                    <?php else : ?>
+                        <a href="<?=BASEURL;?>/auth/login" class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:ml-8 md:my-0">
+                            Login
+                        </a>
+                    <?php endif; ?>
+
                 </div>
             </div>
 

@@ -13,7 +13,7 @@ class UserModel {
     
     /* Insert data user yang telah di validasi
     dari controller ke dalam database */
-    public function store($data)
+    public function insert($data)
     {
         $query = "INSERT INTO ". $this->table ." (avatar, name, username, email, password) VALUES (:avatar, :name, :username, :email, :password)";
 
@@ -46,6 +46,23 @@ class UserModel {
 
         if ( $this->db->rowCount() > 0 ) {
             return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function loginUser($username, $password)
+    {
+        $query = "SELECT * FROM ". $this->table ." WHERE username=:username";
+
+        $this->db->query($query);
+        $this->db->bind('username', $username);
+
+        $row = $this->db->single();
+        $hashPassword = $row['password'];
+
+        if ( password_verify($password, $hashPassword) ) {
+            return $row;
         } else {
             return false;
         }

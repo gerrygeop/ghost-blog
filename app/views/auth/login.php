@@ -14,6 +14,9 @@
                         name="username"
                         required
                         class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring">
+                    <span class="text-xs text-red-500 italic font-bold">
+                        <?= $data['usernameError']; ?>
+                    </span>
                 </div>
                 
                 <div>
@@ -23,6 +26,9 @@
                         name="password"
                         required
                         class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md focus:border-blue-500 focus:outline-none focus:ring">
+                    <span class="text-xs text-red-500 italic font-bold">
+                        <?= $data['passwordError']; ?>
+                    </span>
                 </div>
             </div>
 
