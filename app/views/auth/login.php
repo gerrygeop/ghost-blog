@@ -1,4 +1,5 @@
-<section class="max-w-sm mx-auto bg-white rounded-md shadow-md mb-20">
+<section class="max-w-sm mx-auto bg-white rounded-md shadow-md mt-20">
+
     <div class="p-6">
         <h2 class="font-semibold text-lg text-center text-gray-700 capitalize">Login</h2>
 

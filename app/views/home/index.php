@@ -1,6 +1,6 @@
-<section class="max-w-3xl mx-auto mb-12">
+<section>
     
-    <div class="bg-white lg:flex lg:shadow-lg lg:rounded-lg mb-12">
+    <div class="bg-white lg:flex lg:shadow-md rounded-lg mb-12">
         <div class="p-12 text-center">
             <h2 class="text-2xl text-gray-800 font-bold md:text-3xl">Ayo Mulai Menulis</h2>
             <p class="mt-4 text-gray-600">Mulai tulis blog kamu baik itu cerita, artikel, tips dan trik dan lain sebagainya. Karena dengan menulis kita belajar sambil berbagi untuk memperluas manfaat dan jaringa.</p>
@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <section class="bg-white">
+    <section class="bg-white rounded lg:shadow-md">
         <div class="container px-6 py-8 mx-auto">
             <div class="grid  grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                 <div>

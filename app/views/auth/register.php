@@ -1,4 +1,5 @@
-<section class="max-w-3xl p-6 mx-auto bg-white rounded-md shadow-md mb-20">
+<section class="bg-white rounded-md shadow-md mt-20 p-6">
+
     <h2 class="text-lg font-semibold text-gray-700 capitalize">Register</h2>
     
     <form action="<?=BASEURL;?>/auth/register" method="POST" enctype="multipart/form-data">

@@ -1,6 +1,6 @@
-<main class="max-w-3xl mx-auto">
+<section>
 
-    <div class="bg-white overflow-hidden shadow-md rounded-lg mb-12">
+    <div class="overflow-hidden bg-white shadow-md rounded-lg mb-12">
         <img src="https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg" alt="post 1" class="w-full h-64 object-cover">
         <div class="p-6">
             <div>
@@ -24,4 +24,4 @@
         </div>
     </div>
 
-</main>
+</section>

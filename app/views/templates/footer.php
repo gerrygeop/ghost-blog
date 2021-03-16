@@ -1,4 +1,6 @@
-    <footer class="text-gray-100 bg-gray-800">
+    </main>
+
+    <footer class="text-gray-100 bg-gray-800 mt-96 md:mt-10">
         <div class="max-w-3xl mx-auto py-6">
             
     

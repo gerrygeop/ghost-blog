@@ -1,7 +1,7 @@
-<section class="max-w-3xl mx-auto py-2 px-6 bg-white rounded-md shadow-lg mb-20">
+<section class="bg-white rounded-md lg:shadow-lg py-10 px-6">
 
-    <div class="py-10 text-center">
-        <h2 class="text-2xl text-gray-800 font-bold md:text-3xl">Kita</h2>
+    <div class="mb-10 text-center">
+        <h2 class="text-2xl text-gray-800 font-bold md:text-3xl">Siapa Kita</h2>
     </div>
 
     <!-- Card Team -->

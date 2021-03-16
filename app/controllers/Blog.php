@@ -47,10 +47,10 @@ class Blog extends Controller {
 
     public function create()
     {
-        $data['judul'] = 'Tambah Mahasiswa';
+        $data['judul'] = 'Tambah Tulisan';
 
         $this->view('templates/header', $data);
-        $this->view('mahasiswa/create');
+        $this->view('blogs/create');
         $this->view('templates/footer');
     }
 
