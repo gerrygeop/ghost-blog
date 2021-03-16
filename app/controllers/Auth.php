@@ -174,7 +174,7 @@ class Auth extends Controller {
             // Cek kalo error nya dah bersih
             if ( empty($data['usernameError']) && empty($data['passwordError']) ) {
                 $loginUser = $this->model('UserModel')->loginUser($data['username'], $data['password']);
-
+                
                 if ($loginUser) {
                     $this->createUserSession($loginUser);
                 } else {
@@ -196,6 +196,7 @@ class Auth extends Controller {
     {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
+        $_SESSION['avatar'] = $user['avatar'];
         header('Location: '. BASEURL .'/profile');
     }
 

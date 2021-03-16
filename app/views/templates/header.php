@@ -62,7 +62,7 @@
                                     <button class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" @click="userMenu = true">
                                         <span class="sr-only">Open User Menu</span>
                                         <img class="h-8 w-8 rounded-full"
-                                            src="<?=BASEURL?>/img/avatar-01.png"
+                                            src="<?=BASEURL?>/img/avatars/<?=$_SESSION['avatar']?>"
                                             alt="Avatar">
                                     </button>
                                 </div>
