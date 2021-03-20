@@ -17,9 +17,9 @@
                 <div class="mt-4">
                     <div class="flex items-center">
                         <div class="flex items-center">
-                            <img src="./img/avatar-01.png" alt="Avatar" class="h-10 object-cover rounded-full">
+                            <img src="<?=BASEURL?>/img/avatars/<?= $blog['avatar'] ?>" alt="Avatar" class="h-10 object-cover rounded-full">
                             <a href="#" class="mx-2 text-gray-700 font-semibold hover:underline">
-                                Jennie
+                                <?= $blog['name'] ?>
                             </a>
                         </div>
                         <span class="mx-1 text-gray-600 text-xs"><?= $blog['created_at'] ?></span>
@@ -29,7 +29,8 @@
         </div>
 
     <?php endforeach; ?>
-
+    
+    <!-- 
     <div class="overflow-hidden bg-white shadow-md rounded-lg mb-12">
         <img src="https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg" alt="post 1" class="w-full h-64 object-cover">
         <div class="p-6">
@@ -58,6 +59,6 @@
             </div>
         </div>
     </div>
-
+    -->
 
 </section>

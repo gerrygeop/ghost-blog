@@ -2,7 +2,8 @@
 
 class BlogModel {
 
-    private $table = 'blogs';
+    private $tbl_blogs = 'blogs';
+    private $tbl_users = 'users';
     private $db;
 
     public function __construct()
@@ -12,14 +13,21 @@ class BlogModel {
 
     public function getAllBlogs()
     {
-        $this->db->query('SELECT * FROM '. $this->table);
+        $query = "SELECT u.name, u.avatar, b.cover, b.title, b.content, b.created_at FROM ".
+                    $this->tbl_blogs.
+                    " as b JOIN ".
+                    $this->tbl_users.
+                    " as u ON u.id = b.user_id ORDER BY b.id DESC";
+
+        $this->db->query($query);
         return $this->db->resultSet();
     }
+
 
     /* 
     public function getMahasiswaById($id)
     {
-        $this->db->query('SELECT * FROM '. $this->table .' WHERE id=:id');
+        $this->db->query('SELECT * FROM '. $this->tbl_blogs .' WHERE id=:id');
         $this->db->bind('id', $id);
 
         return $this->db->single();
@@ -27,7 +35,7 @@ class BlogModel {
 
     public function insertBlog($data)
     {
-        $query = "INSERT INTO ". $this->table ." (user_id, cover, title, content, created_at) VALUES (:user_id, :cover, :title, :content, :created_at)";
+        $query = "INSERT INTO ". $this->tbl_blogs ." (user_id, cover, title, content, created_at) VALUES (:user_id, :cover, :title, :content, :created_at)";
 
         $this->db->query($query);
         $this->db->bind('user_id', $data['userId']);
