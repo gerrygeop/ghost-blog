@@ -1,6 +1,6 @@
     </main>
 
-    <footer class="text-gray-100 bg-gray-800 mt-96 md:mt-10">
+    <footer class="text-gray-100 bg-gray-800 mt-96">
         <div class="max-w-3xl mx-auto py-6">
             
     
@@ -25,6 +25,16 @@
             
         </div>
     </footer>
+
+
+    <!-- Initialize CKEditor -->
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#texteditor' ) )
+            .catch( error => {
+                console.log( error );
+            } );
+    </script>
 
 </body>
 </html>

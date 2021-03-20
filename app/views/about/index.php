@@ -1,4 +1,4 @@
-<section class="bg-white rounded-md lg:shadow-lg py-10 px-6">
+<section class="bg-white rounded-md md:shadow-lg py-10 px-6">
 
     <div class="mb-10 text-center">
         <h2 class="text-2xl text-gray-800 font-bold md:text-3xl">Siapa Kita</h2>
@@ -6,7 +6,6 @@
 
     <!-- Card Team -->
     <div class="flex flex-wrap items-center justify-between">
-
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 
             <div class="w-full max-w-xs text-center">
@@ -54,7 +53,6 @@
             </div>
 
         </div>
-    
     </div>
     <!-- End Card Team -->
 

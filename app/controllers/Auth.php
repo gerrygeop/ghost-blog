@@ -205,6 +205,7 @@ class Auth extends Controller {
     {
         unset($_SESSION['user_id']);
         unset($_SESSION['username']);
+        unset($_SESSION['avatar']);
         header('Location: '. BASEURL .'/auth/login');
     }
 }

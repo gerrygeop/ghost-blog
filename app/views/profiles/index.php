@@ -1,4 +1,4 @@
-<section class="mb-20">
+<section>
 
     <div class="bg-white p-5 rounded-md shadow-md mb-8">
         <!-- Profile -->
@@ -22,7 +22,7 @@
     <div class="bg-white px-5 py-8 rounded-md shadow-md">
 
         <div class="mb-8">
-            <a href="<?=BASEURL?>/blog/create" class="text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg py-2 px-3 shadow-lg">
+            <a href="<?=BASEURL?>/blog/create" class="text-white bg-indigo-600 hover:bg-indigo-700 rounded-md py-2 px-3 shadow-lg">
                 + Tulisan
             </a>
         </div>

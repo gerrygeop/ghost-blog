@@ -1,6 +1,6 @@
 <section class="bg-white p-5 rounded-md shadow-md">
 
-    <form action="#" method="POST" enctype="multipart/form-data">
+    <form action="<?=BASEURL?>/blog/store" method="POST" enctype="multipart/form-data">
         <div class="grid grid-cols-1 gap-6">
 
             <div>
@@ -19,23 +19,23 @@
                             <label
                                 for="cover"
                                 class="relative cursor-pointer bg-indigo-50 hover:bg-indigo-100 px-4 py-2 rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                                    <input type="file" id="cover" name="cover" class="sr-only" required>
                                     <span>Upload a file</span>
-                                    <input type="file" name="cover" class="sr-only">
                             </label>
                         </div>
 
                         <p class="text-xs text-gray-500">
-                            PNG, JPG, JPEG up to 10MB
+                            PNG, JPG, JPEG up to 5MB
                         </p>
                     </div>
                 </div>
             </div>
 
             <div>
-                <label for="name" class="block font-medium text-gray-700">Judul</label>
+                <label for="title" class="block font-medium text-gray-700">Judul</label>
                 <input
                     type="text"
-                    name="name" 
+                    name="title" 
                     required
                     class="block w-full px-4 py-2 mt-2 text-gray-700 border-2 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500">
             </div>
@@ -44,9 +44,16 @@
                 <label for="content" class="block font-medium text-gray-700">Content</label>
                 <textarea
                     name="content"
+                    id="texteditor"
                     cols="30"
                     rows="10"
-                    class="block w-full px-4 py-2 mt-2 text-gray-700 border-2 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    class="block w-full h-98 px-4 py-2 mt-2 text-gray-700 border-2 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+            </div>
+
+            <div class="mt-10 text-right">
+                <button type="submit" class="bg-pink-600 hover:bg-pink-700 text-pink-50 px-4 py-2 shadow-md rounded-md font-medium">
+                    Simpan
+                </button>
             </div>
 
         </div>

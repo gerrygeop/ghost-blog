@@ -11,6 +11,9 @@
     <!-- Alphine JS -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
 
+    <!-- CKEditor -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/26.0.0/classic/ckeditor.js"></script>
+
     <!-- Font Style -->
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-font.css">
 
@@ -196,4 +199,4 @@
 
     </nav>
 
-    <main class="max-w-3xl mx-auto h-screen">
+    <main class="max-w-3xl mx-auto h-full">

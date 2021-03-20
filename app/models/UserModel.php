@@ -4,6 +4,7 @@ class UserModel {
 
     private $table = 'users';
     private $db;
+    private $hashPassword;
 
     public function __construct()
     {
@@ -59,9 +60,12 @@ class UserModel {
         $this->db->bind('username', $username);
 
         $row = $this->db->single();
-        $hashPassword = $row['password'];
+        
+        if (!empty($row)) {
+            $this->hashPassword = $row['password'];
+        }
 
-        if ( password_verify($password, $hashPassword) ) {
+        if ( password_verify($password, $this->hashPassword) ) {
             return $row;
         } else {
             return false;
