@@ -109,11 +109,11 @@ class Blog extends Controller {
 
     public function edit($id)
     {
-        $data['judul'] = 'Edit Mahasiswa';
-        $data['mhs'] = $this->model('BlogModel')->getMahasiswaById($id);
+        $data['judul'] = 'Edit Blog';
+        // $data['mhs'] = $this->model('BlogModel')->getMahasiswaById($id);
 
         $this->view('templates/header', $data);
-        $this->view('mahasiswa/edit', $data);
+        $this->view('blogs/edit', $data);
         $this->view('templates/footer');
     }
 
@@ -121,24 +121,24 @@ class Blog extends Controller {
     {
         if ($this->model('BlogModel')->updateMahasiswa($_POST) > 0) {
             Flasher::setFlash('Berhasil', 'Diupdate', 'success');
-            header('Location: ' . BASEURL . '/mahasiswa');
+            header('Location: ' . BASEURL . '/profile');
             exit;
         } else {
             Flasher::setFlash('Gagal', 'Diupdate', 'danger');
-            header('Location: ' . BASEURL . '/mahasiswa');
+            header('Location: ' . BASEURL . '/profile');
             exit;
         }
     }
 
     public function delete($id)
     {
-        if ($this->model('BlogModel')->hapusMahasiswa($id) > 0) {
-            Flasher::setFlash('Berhasil', 'Dihapus', 'success');
-            header('Location: ' . BASEURL . '/mahasiswa');
+        if ($this->model('BlogModel')->deleteBlog($id) > 0) {
+            // Flasher::setFlash('Berhasil', 'Dihapus', 'success');
+            header('Location: ' . BASEURL . '/profile');
             exit;
         } else {
-            Flasher::setFlash('Gagal', 'Dihapus', 'danger');
-            header('Location: ' . BASEURL . '/mahasiswa');
+            // Flasher::setFlash('Gagal', 'Dihapus', 'danger');
+            header('Location: ' . BASEURL . '/profile');
             exit;
         }
     }

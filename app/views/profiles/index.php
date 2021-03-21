@@ -32,6 +32,7 @@
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
 
                     <div class="overflow-hidden border-b border-gray-200 sm:rounded-lg">
+
                         <table class="min-w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50">
                                 <tr>
@@ -48,26 +49,36 @@
                             </thead>
                             
                             <tbody class="bg-white divide-y divide-gray-200">
-                                <tr>
-                                    <td class="px-6 py-4 whitespace-nowwrap">
-                                        <div class="text-sm text-gray-900">
-                                            I Built A Successful Blog In One Day
-                                        </div>
-                                        <div class="text-xs text-gray-500">
-                                            Productive
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowwrap">
-                                        <span class="px-2 inline-flex text-sm leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                            Active
-                                        </span>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowwrap text-right text-base font-medium">
-                                        <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                    </td>
-                                </tr>
+                                <?php foreach ($data['blogs'] as $blog) { ?>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowwrap">
+                                            <div class="text-sm text-gray-900">
+                                                <?= $blog['title'] ?>
+                                            </div>
+                                            <div class="text-xs text-gray-500">
+                                                Productive
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowwrap">
+                                            <span class="px-2 inline-flex text-sm leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                Active
+                                            </span>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowwrap text-right text-base font-medium">
+                                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+
+                                            <form action="<?=BASEURL?>/blog/delete/<?=$blog['id']?>" method="POST">
+                                                <button class="text-red-600 hover:text-red-900" onclick="return confirm('Are u sure?');">
+                                                    Delete
+                                                </button>
+                                            </form>
+
+                                        </td>
+                                    </tr>
+                                <?php }; ?>
                             </tbody>
                         </table>
+
                     </div>
 
                 </div>

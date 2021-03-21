@@ -20,18 +20,29 @@ class BlogModel {
                     " as u ON u.id = b.user_id ORDER BY b.id DESC";
 
         $this->db->query($query);
+        
+        return $this->db->resultSet();
+    }
+
+    public function getAllBlogByUserId($userId)
+    {
+        $query = "SELECT * FROM ". $this->tbl_blogs ." WHERE user_id=:user_id";
+
+        $this->db->query($query);
+        $this->db->bind('user_id', $userId);
+
         return $this->db->resultSet();
     }
 
 
-    /* 
-    public function getMahasiswaById($id)
+    
+    public function getBlogById($id)
     {
         $this->db->query('SELECT * FROM '. $this->tbl_blogs .' WHERE id=:id');
         $this->db->bind('id', $id);
 
         return $this->db->single();
-    } */
+    }
 
     public function insertBlog($data)
     {
@@ -60,16 +71,16 @@ class BlogModel {
         $this->db->execute();
 
         return $this->db->rowCount();
-    }
+    }*/
 
-    public function hapusMahasiswa($id)
+    public function deleteBlog($id)
     {
-        $query = "DELETE FROM ". $this->able ." WHERE id = :id";
+        $query = "DELETE FROM ". $this->tbl_blogs ." WHERE id = :id";
 
         $this->db->query($query);
         $this->db->bind('id', $id);
         $this->db->execute();
 
         return $this->db->rowCount();
-    } */
+    }
 }
