@@ -13,7 +13,7 @@ class BlogModel {
 
     public function getAllBlogs()
     {
-        $query = "SELECT u.name, u.avatar, b.cover, b.title, b.content, b.created_at FROM ".
+        $query = "SELECT u.id, u.name, u.avatar, b.id, b.cover, b.title, b.content, b.created_at FROM ".
                     $this->tbl_blogs.
                     " as b JOIN ".
                     $this->tbl_users.
@@ -26,7 +26,7 @@ class BlogModel {
 
     public function getAllBlogByUserId($userId)
     {
-        $query = "SELECT * FROM ". $this->tbl_blogs ." WHERE user_id=:user_id";
+        $query = "SELECT * FROM ". $this->tbl_blogs ." WHERE user_id=:user_id ORDER BY id DESC";
 
         $this->db->query($query);
         $this->db->bind('user_id', $userId);
@@ -34,11 +34,17 @@ class BlogModel {
         return $this->db->resultSet();
     }
 
-
     
     public function getBlogById($id)
     {
-        $this->db->query('SELECT * FROM '. $this->tbl_blogs .' WHERE id=:id');
+        $query = "SELECT u.id, u.name, u.avatar, b.id, b.cover, b.title, b.content, b.created_at FROM ". 
+                    $this->tbl_blogs.
+                    " as b JOIN ".
+                    $this->tbl_users.
+                    " as u ON u.id = b.user_id".
+                    " WHERE b.id=:id";
+
+        $this->db->query($query);
         $this->db->bind('id', $id);
 
         return $this->db->single();

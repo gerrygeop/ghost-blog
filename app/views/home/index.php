@@ -6,7 +6,7 @@
             <p class="mt-4 text-gray-600">Mulai tulis blog kamu baik itu cerita, artikel, tips dan trik dan lain sebagainya. Karena dengan menulis kita belajar sambil berbagi untuk memperluas manfaat dan jaringa.</p>
 
             <div class="mt-8">
-                <a href="#" class="bg-gray-900 text-gray-100 px-5 py-3 font-semibold rounded hover:bg-gray-800 hover:shadow-lg">Tulis</a>
+                <a href="<?=BASEURL?>/blog/create" class="bg-gray-900 text-gray-100 px-5 py-3 font-semibold rounded hover:bg-gray-800 hover:shadow-lg">Tulis</a>
             </div>
         </div>
     </div>

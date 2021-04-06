@@ -14,11 +14,11 @@ class Blog extends Controller {
 
     public function detail($id)
     {
-        $data['judul'] = 'Detail Mahasiswa';
-        $data['mhs'] = $this->model('BlogModel')->getMahasiswaById($id);
+        $data['judul'] = 'Detail Blog';
+        $data['blog'] = $this->model('BlogModel')->getBlogById($id);
 
         $this->view('templates/header', $data);
-        $this->view('mahasiswa/detail', $data);
+        $this->view('blogs/detail', $data);
         $this->view('templates/footer');
     }
 
