@@ -51,7 +51,7 @@
             </div>
 
             <div class="mt-10 text-right">
-                <button type="submit" class="bg-pink-600 hover:bg-pink-700 text-pink-50 px-4 py-2 shadow-md rounded-md font-medium">
+                <button type="submit" class="bg-violet-600 hover:bg-violet-700 text-violet-50 px-4 py-2 shadow-md rounded-md font-medium">
                     Simpan
                 </button>
             </div>

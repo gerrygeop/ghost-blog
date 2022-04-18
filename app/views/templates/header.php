@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Tailwind CSS -->
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Alphine JS -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
@@ -21,13 +21,13 @@
 </head>
 <body class="bg-gray-200 font-karla">
 
-    <nav class="bg-gray-800 shadow mb-10" x-data="{ mobileMenu: false }">
+    <nav class="sticky top-0 bg-white/70 backdrop-blur-md shadow mb-10" x-data="{ mobileMenu: false }">
         <div class="max-w-3xl mx-auto px-4 md:px-0">
 
             <div class="flex items-center justify-between h-16">
 
                 <div class="flex items-center">
-                    <div class="flex-shrink-0 text-pink-500">
+                    <div class="flex-shrink-0 text-violet-500">
                         <!-- Logo/Brand -->
                         <a href="<?=BASEURL?>">
                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ghost" class="svg-inline--fa fa-ghost fa-w-12 h-8 w-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -39,9 +39,9 @@
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
                             <!-- <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a> -->
-                            <a href="<?=BASEURL?>/blog" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tulisan</a>
-                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Nongkrong</a>
-                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                            <a href="<?=BASEURL?>/blog" class="text-gray-700 hover:bg-violet-500 hover:text-violet-50 transition-all duration-200 transform px-3 py-2 rounded-md text-sm font-semibold <?= $data['judul'] == 'Blogs' ? 'bg-violet-500 text-violet-50':'' ?>">Tulisan</a>
+                            <a href="#" class="text-gray-700 hover:bg-violet-500 hover:text-violet-50 transition-all duration-200 transform px-3 py-2 rounded-md text-sm font-semibold">Nongkrong</a>
+                            <a href="#" class="text-gray-700 hover:bg-violet-500 hover:text-violet-50 transition-all duration-200 transform px-3 py-2 rounded-md text-sm font-semibold">Projects</a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                             </div>
 
                         <?php else : ?>
-                            <a href="<?=BASEURL?>/auth/login" class="bg-pink-600 text-white px-3 py-2 rounded-md text-sm font-medium ring-2 ring-pink-400 ring-inset">Login</a>
+                            <a href="<?=BASEURL?>/auth/login" class="bg-violet-600 hover:bg-violet-500 text-white px-3 py-2 rounded-md text-sm font-medium ring-2 ring-violet-400 ring-inset">Login</a>
 
                         <?php endif; ?>
 
@@ -189,7 +189,7 @@
 
                 <?php else : ?>
                     <div class="px-2">
-                        <a href="#" class="block bg-pink-600 hover:bg-pink-700 text-center text-white px-3 py-2 rounded-md text-base font-medium ring-2 ring-pink-400 ring-inset">Login</a>
+                        <a href="#" class="block bg-violet-600 hover:bg-violet-700 text-center text-white px-3 py-2 rounded-md text-base font-medium ring-2 ring-violet-400 ring-inset">Login</a>
                     </div>
 
                 <?php endif; ?>

@@ -14,4 +14,7 @@
 
 Tailwind CSS & Alpine JS
 
-##### Menanti perkembangan lebih lanjut
+##### Users
+
+- username: jennie | pass: asdfg
+- username: jacki | pass: asdfg

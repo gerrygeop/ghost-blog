@@ -24,18 +24,8 @@ class BlogModel {
         return $this->db->resultSet();
     }
 
-    public function getAllBlogByUserId($userId)
-    {
-        $query = "SELECT * FROM ". $this->tbl_blogs ." WHERE user_id=:user_id ORDER BY id DESC";
 
-        $this->db->query($query);
-        $this->db->bind('user_id', $userId);
-
-        return $this->db->resultSet();
-    }
-
-    
-    public function getBlogById($id)
+    public function getBlogByIdWithUser($id)
     {
         $query = "SELECT u.id, u.name, u.avatar, b.id, b.cover, b.title, b.content, b.created_at FROM ". 
                     $this->tbl_blogs.
@@ -49,6 +39,29 @@ class BlogModel {
 
         return $this->db->single();
     }
+
+
+    public function getBlogById($id)
+    {
+        $query = "SELECT * FROM ". $this->tbl_blogs ." WHERE id=:id";
+
+        $this->db->query($query);
+        $this->db->bind('id', $id);
+
+        return $this->db->single();
+    }
+
+
+    public function getAllBlogByUserId($userId)
+    {
+        $query = "SELECT * FROM ". $this->tbl_blogs ." WHERE user_id=:user_id ORDER BY id DESC";
+
+        $this->db->query($query);
+        $this->db->bind('user_id', $userId);
+
+        return $this->db->resultSet();
+    }
+
 
     public function insertBlog($data)
     {

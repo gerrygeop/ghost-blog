@@ -13,7 +13,7 @@
                     <p class="text-sm"><?= $data['user']['email']; ?></p>
                 </div>
             </div>
-            <div class="bg-pink-600 hover:bg-pink-700 px-3 py-2 rounded-md text-white text-sm font-medium shadow-lg">
+            <div class="bg-violet-600 hover:bg-violet-700 px-3 py-2 rounded-md text-white text-sm font-medium shadow-lg">
                 <a href="#">Edit profile</a>
             </div>
         </div>
@@ -65,7 +65,11 @@
                                             </span>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowwrap text-right text-base font-medium">
-                                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                            <a
+                                                href="<?=BASEURL?>/blog/edit/<?=$blog['id']?>"
+                                                class="text-indigo-600 hover:text-indigo-900">
+                                                Edit
+                                            </a>
 
                                             <form action="<?=BASEURL?>/blog/delete/<?=$blog['id']?>" method="POST">
                                                 <button class="text-red-600 hover:text-red-900" onclick="return confirm('Are u sure?');">

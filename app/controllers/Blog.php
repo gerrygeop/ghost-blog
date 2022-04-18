@@ -15,7 +15,7 @@ class Blog extends Controller {
     public function detail($id)
     {
         $data['judul'] = 'Detail Blog';
-        $data['blog'] = $this->model('BlogModel')->getBlogById($id);
+        $data['blog'] = $this->model('BlogModel')->getBlogByIdWithUser($id);
 
         $this->view('templates/header', $data);
         $this->view('blogs/detail', $data);
@@ -110,7 +110,7 @@ class Blog extends Controller {
     public function edit($id)
     {
         $data['judul'] = 'Edit Blog';
-        // $data['mhs'] = $this->model('BlogModel')->getMahasiswaById($id);
+        $data['blog'] = $this->model('BlogModel')->getBlogById($id);
 
         $this->view('templates/header', $data);
         $this->view('blogs/edit', $data);
